@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Bardan Tamang — Integrated Business Management student portfolio">
+<title>Bardan Tamang | Student Portfolio</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:#090908;color:#e9e1cc;font-family:Georgia,"Times New Roman",serif;
+  line-height:1.7;overflow-x:hidden
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.08;
+  background-image:radial-gradient(#d6b35a 1px,transparent 1px);
+  background-size:26px 26px;z-index:-1
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(1100px,92%);margin:auto}
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(8,8,7,.88);backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(205,166,73,.25)
+}
+.nav{height:70px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:1.2rem;letter-spacing:3px;color:#d7b45a;font-weight:bold}
+nav{display:flex;gap:25px}
+nav a{font-family:Arial,sans-serif;font-size:.8rem;text-transform:uppercase;letter-spacing:1.5px;color:#c7c0ae}
+nav a:hover{color:#e0bd62}
+.menu{display:none;background:none;border:1px solid #75602d;color:#d7b45a;padding:6px 10px}
+.hero{
+  min-height:100vh;display:flex;align-items:center;position:relative;
+  padding:110px 0 70px;text-align:center
+}
+.hero:after{
+  content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);
+  width:75%;height:1px;background:linear-gradient(90deg,transparent,#b99442,transparent)
+}
+.rune{font-size:4rem;color:#caa64c;opacity:.75;margin-bottom:10px}
+.eyebrow{font:700 .75rem Arial,sans-serif;letter-spacing:5px;text-transform:uppercase;color:#9e8650}
+h1{font-size:clamp(3rem,8vw,6.8rem);line-height:.95;margin:18px 0;color:#eee5d1;text-shadow:0 0 30px rgba(205,166,73,.15)}
+.subtitle{font-size:clamp(1.1rem,2.5vw,1.45rem);color:#b6ad99;max-width:700px;margin:0 auto 28px}
+.btn{
+  display:inline-block;padding:12px 23px;border:1px solid #b18d3e;
+  color:#e2c36d;font:700 .75rem Arial,sans-serif;letter-spacing:2px;text-transform:uppercase;
+  margin:6px;transition:.25s
+}
+.btn:hover{background:#b18d3e;color:#090908;transform:translateY(-2px)}
+section{padding:95px 0}
+.section-title{text-align:center;margin-bottom:45px}
+.section-title span{font:700 .7rem Arial,sans-serif;letter-spacing:4px;text-transform:uppercase;color:#8f7949}
+h2{font-size:2.5rem;color:#e8ddc4;margin-top:8px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.card{
+  background:linear-gradient(145deg,rgba(28,27,23,.94),rgba(13,13,12,.94));
+  border:1px solid rgba(183,148,65,.25);padding:28px;
+  position:relative;transition:.3s
+}
+.card:before,.card:after{content:"";position:absolute;width:14px;height:14px;border-color:#b18d3e}
+.card:before{top:-1px;left:-1px;border-top:1px solid;border-left:1px solid}
+.card:after{bottom:-1px;right:-1px;border-bottom:1px solid;border-right:1px solid}
+.card:hover{transform:translateY(-5px);border-color:rgba(211,175,80,.55)}
+.card h3{color:#d5b45d;font-size:1.25rem;margin-bottom:10px}
+.card p{color:#aaa391}
+.about{max-width:820px;margin:auto;text-align:center;color:#b9b09c;font-size:1.08rem}
+.skills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.skill{padding:9px 15px;border:1px solid #66542d;background:#12110e;color:#cbb778;font:700 .8rem Arial,sans-serif;letter-spacing:1px}
+.timeline{max-width:800px;margin:auto}
+.step{display:flex;gap:22px;margin-bottom:25px;align-items:flex-start}
+.dot{width:16px;height:16px;min-width:16px;border:1px solid #c5a24e;transform:rotate(45deg);margin-top:8px}
+.step h3{color:#ddd0b1;margin-bottom:4px}
+.step p{color:#989283}
+.contact{text-align:center}
+.contact p{color:#aaa391;margin:10px auto 20px}
+.email{color:#d5b45d}
+footer{padding:28px 0;text-align:center;border-top:1px solid rgba(205,166,73,.18);color:#777263;font:12px Arial,sans-serif;letter-spacing:1px}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
+.reveal.show{opacity:1;transform:none}
+@media(max-width:700px){
+  nav{display:none;position:absolute;top:70px;left:0;right:0;background:#0b0b09;flex-direction:column;padding:18px 5%;border-bottom:1px solid #5d4b28}
+  nav.open{display:flex}
+  .menu{display:block}
+  .grid{grid-template-columns:1fr}
+  section{padding:70px 0}
+  .hero{min-height:92vh}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home">BT</a>
+    <button class="menu" onclick="toggleMenu()" aria-label="Open navigation">MENU</button>
+    <nav id="nav">
+      <a href="#about">About</a>
+      <a href="#interests">Interests</a>
+      <a href="#skills">Skills</a>
+      <a href="#journey">Journey</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container reveal">
+    <div class="rune">✦</div>
+    <div class="eyebrow">Student Portfolio</div>
+    <h1>Bardan Tamang</h1>
+    <p class="subtitle">Integrated Business Management student at Dong-A University, exploring finance, data analysis, coding, and the world of games.</p>
+    <a class="btn" href="#about">Enter My Journey</a>
+    <a class="btn" href="#contact">Contact</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container reveal">
+    <div class="section-title"><span>Character Profile</span><h2>About Me</h2></div>
+    <p class="about">
+      I am Bardan Tamang, an Integrated Business Management student at Dong-A University.
+      I am really eager to learn about finance and data analysis while developing my knowledge
+      in coding. In the future, I hope to do something in the gaming sector. I especially enjoy
+      FromSoftware games because of their deep stories, world-building, drawing, and art.
+    </p>
+  </div>
+</section>
+
+<section id="interests">
+  <div class="container reveal">
+    <div class="section-title"><span>Areas of Exploration</span><h2>Interests</h2></div>
+    <div class="grid">
+      <div class="card"><h3>Finance</h3><p>Building a stronger understanding of financial concepts, business decisions, and how numbers can explain real-world situations.</p></div>
+      <div class="card"><h3>Data Analysis</h3><p>Interested in turning data into useful insights and learning the tools and methods needed to analyze information.</p></div>
+      <div class="card"><h3>Coding</h3><p>Developing coding knowledge step by step and exploring how programming can support business and analytical work.</p></div>
+      <div class="card"><h3>Gaming</h3><p>Interested in the gaming sector, especially creative world-building, storytelling, visual art, and the systems behind games.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container reveal">
+    <div class="section-title"><span>Current Abilities</span><h2>Skills & Learning</h2></div>
+    <div class="skills">
+      <div class="skill">Finance</div>
+      <div class="skill">Data Analysis</div>
+      <div class="skill">Coding</div>
+      <div class="skill">Business Management</div>
+      <div class="skill">Problem Solving</div>
+      <div class="skill">Continuous Learning</div>
+    </div>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="container reveal">
+    <div class="section-title"><span>The Path Ahead</span><h2>My Journey</h2></div>
+    <div class="timeline">
+      <div class="step"><div class="dot"></div><div><h3>Now — Learn</h3><p>Strengthen my foundation in business, finance, coding, and data analysis.</p></div></div>
+      <div class="step"><div class="dot"></div><div><h3>Next — Build</h3><p>Create practical projects that combine business knowledge with data and technology.</p></div></div>
+      <div class="step"><div class="dot"></div><div><h3>Future — Explore</h3><p>Look for opportunities where finance, data, technology, and the gaming industry intersect.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container contact reveal">
+    <div class="section-title"><span>Summon Me</span><h2>Contact</h2></div>
+    <p>If you would like to connect, collaborate, or talk about business, data, coding, or games:</p>
+    <a class="btn email" href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a>
+    <p style="font-size:.8rem;margin-top:22px">Replace the email above with your real email address before publishing.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  © 2026 Bardan Tamang · Built as a single HTML file · Original fantasy-inspired design
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById("nav").classList.toggle("open");
+}
+document.querySelectorAll("nav a").forEach(a=>{
+  a.addEventListener("click",()=>document.getElementById("nav").classList.remove("open"));
+});
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting) entry.target.classList.add("show");
+  });
+},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
