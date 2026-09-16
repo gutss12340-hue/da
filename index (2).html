@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bardan Tamang — Business management student, Busan</title>
+<meta name="description" content="Integrated business management student at Dong-A University. Learning finance and code, aiming to work as a financial analyst in the games industry.">
+
+<!--
+  ─────────────────────────────────────────────────────────────
+  STILL TO FILL IN (search for "example.com" and "yourusername")
+  1. Your email address
+  2. GitHub username, LinkedIn URL
+  3. Your enrolment year in the Education section
+  4. Delete the Résumé link if you don't have one yet
+  Colours and fonts live in the :root block below.
+  ─────────────────────────────────────────────────────────────
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --paper:#ECEEF0;
+  --grid:#D8DDE1;
+  --ink:#1C2126;
+  --ink-soft:#5A646C;
+  --rule:#C6CDD2;
+  --marker:#E6B33F;
+  --link:#8F3B22;
+  --card:#F7F8F9;
+  --grid-size:26px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#14181B;
+    --grid:#1E2428;
+    --ink:#E8EBED;
+    --ink-soft:#9AA5AC;
+    --rule:#2B3338;
+    --marker:#7A5A14;
+    --link:#E7A480;
+    --card:#191F23;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#14181B; --grid:#1E2428; --ink:#E8EBED; --ink-soft:#9AA5AC;
+  --rule:#2B3338; --marker:#7A5A14; --link:#E7A480; --card:#191F23;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background-color:var(--paper);
+  background-image:
+    linear-gradient(to right, var(--grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+  background-size:var(--grid-size) var(--grid-size);
+  color:var(--ink);
+  font-family:"Source Serif 4","Iowan Old Style",Georgia,"Times New Roman",serif;
+  font-size:clamp(1rem,0.96rem + 0.2vw,1.075rem);
+  line-height:1.65;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--link)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:2px}
+
+.shell{
+  max-width:1120px;
+  margin:0 auto;
+  padding:clamp(2rem,6vw,5rem) clamp(1.15rem,5vw,3rem) 0;
+  display:grid;
+  gap:clamp(2.5rem,5vw,4.5rem);
+}
+@media (min-width:900px){
+  .shell{grid-template-columns:minmax(270px,22rem) minmax(0,1fr);align-items:start}
+  .side{position:sticky;top:clamp(2rem,6vw,4rem)}
+}
+
+.name{
+  position:relative;
+  display:inline-block;
+  font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  font-weight:700;
+  font-size:clamp(2.4rem,7vw,3.5rem);
+  line-height:1.02;
+  letter-spacing:-0.025em;
+  margin:0;
+}
+.name span{position:relative;z-index:1}
+.name::before{
+  content:"";
+  position:absolute;
+  z-index:0;
+  left:-.16em;right:-.16em;top:.16em;bottom:.12em;
+  background:var(--marker);
+  transform:skewY(-1.3deg) scaleX(1);
+  transform-origin:left center;
+  animation:swipe .65s cubic-bezier(.2,.75,.3,1) .25s backwards;
+}
+@keyframes swipe{from{transform:skewY(-1.3deg) scaleX(0)}}
+@media (prefers-reduced-motion:reduce){.name::before{animation:none}}
+
+.tagline{margin:1.5rem 0 0;max-width:34ch;font-size:1.125rem}
+.facts{margin:2rem 0 0;font-size:.95rem}
+.facts div{display:flex;gap:.9rem;padding:.55rem 0;border-top:1px solid var(--rule)}
+.facts dt{flex:0 0 5.5rem;color:var(--ink-soft)}
+.facts dd{margin:0}
+.contact{
+  list-style:none;margin:2rem 0 0;padding:0;
+  font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  font-size:.95rem;
+}
+.contact li{margin:0 0 .5rem}
+.contact a{text-decoration-thickness:1px;text-underline-offset:3px}
+
+main{min-width:0;padding-bottom:clamp(3rem,8vw,6rem)}
+section{scroll-margin-top:2rem;margin:0 0 clamp(3rem,6vw,4.5rem)}
+h2{
+  font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  font-weight:500;font-size:1.05rem;letter-spacing:.01em;
+  color:var(--ink-soft);
+  margin:0 0 1.25rem;padding:0 0 .6rem;
+  border-bottom:1px solid var(--rule);
+}
+p{margin:0 0 1rem;max-width:68ch}
+p:last-child{margin-bottom:0}
+
+.projects{list-style:none;margin:0;padding:0}
+.projects li{padding:1.4rem 0;border-bottom:1px solid var(--rule)}
+.projects li:first-child{padding-top:0}
+.projects h3{
+  font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  font-weight:700;font-size:1.3rem;letter-spacing:-.01em;margin:0 0 .4rem;
+}
+.projects h3 a{
+  color:inherit;text-decoration:none;
+  background-image:linear-gradient(var(--marker),var(--marker));
+  background-repeat:no-repeat;background-position:0 88%;background-size:0 .32em;
+  transition:background-size .25s ease;
+}
+.projects h3 a:hover,.projects h3 a:focus-visible{background-size:100% .32em}
+@media (prefers-reduced-motion:reduce){.projects h3 a{transition:none}}
+.meta{color:var(--ink-soft);font-size:.92rem;margin-top:.5rem}
+
+.skills{margin:0}
+.skills div{padding:.75rem 0;border-bottom:1px solid var(--rule)}
+.skills dt{
+  font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  font-size:.9rem;color:var(--ink-soft);margin-bottom:.15rem;
+}
+.skills dd{margin:0}
+
+.timeline{list-style:none;margin:0;padding:0}
+.timeline li{display:grid;gap:.15rem 1.5rem;padding:1rem 0;border-bottom:1px solid var(--rule)}
+@media (min-width:560px){.timeline li{grid-template-columns:8rem 1fr}}
+.timeline .when{color:var(--ink-soft);font-variant-numeric:tabular-nums;font-size:.95rem}
+.timeline strong{font-weight:600}
+.timeline .note{color:var(--ink-soft);font-size:.95rem;display:block}
+
+.note-card{background:var(--card);border:1px solid var(--rule);padding:1.25rem 1.4rem}
+footer{border-top:1px solid var(--rule);padding-top:1.25rem;color:var(--ink-soft);font-size:.9rem}
+</style>
+</head>
+
+<body>
+<div class="shell">
+
+  <header class="side">
+    <h1 class="name"><span>Bardan Tamang</span></h1>
+    <p class="tagline">Business management student in Busan, learning finance and code so I can work on the money side of games.</p>
+
+    <dl class="facts">
+      <div><dt>Studying</dt><dd>Integrated Business Management, Dong-A University</dd></div>
+      <div><dt>Learning</dt><dd>Coding and finance</dd></div>
+      <div><dt>Goal</dt><dd>Financial analyst in the games industry</dd></div>
+      <div><dt>Based in</dt><dd>Busan, South Korea</dd></div>
+    </dl>
+
+    <ul class="contact">
+      <li><a href="mailto:you@example.com">you@example.com</a></li>
+      <li><a href="https://github.com/yourusername">github.com/yourusername</a></li>
+      <li><a href="https://linkedin.com/in/yourusername">linkedin.com/in/yourusername</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About</h2>
+      <p>I'm studying integrated business management at Dong-A University, which means I spend my weeks on accounting, marketing, operations and strategy rather than one narrow specialism. What pulled me in was finance — the part where a company's decisions show up as numbers you can actually read.</p>
+      <p>Alongside coursework I'm teaching myself to code. Not to become a developer, but because the analysts I want to learn from all work in spreadsheets, Python and SQL, and I'd rather pull my own data than wait for someone to send it to me.</p>
+    </section>
+
+    <section id="gaming">
+      <h2>Why games</h2>
+      <p>I've spent a lot of hours in FromSoftware games. Sekiro taught me that a wall you can't get past is usually a pattern you haven't read properly yet, and Elden Ring is the rare case of a studio betting on something difficult and being rewarded for it at enormous scale.</p>
+      <p>That bet is what interests me professionally. Games are a business of long development cycles, uncertain hits and audiences who notice everything — which makes the financial side genuinely hard and genuinely interesting. Studio economics, live-service revenue, the difference between a game that sells and a game that keeps selling: that's what I want to spend my career analysing, and what I want to contribute back to the community that got me here.</p>
+    </section>
+
+    <section id="working-on">
+      <h2>What I'm working on</h2>
+      <ul class="projects">
+        <li>
+          <h3>Reading game company financials</h3>
+          <p>Working through the quarterly reports of studios and publishers I actually play — revenue mix, development costs, how a single release moves the numbers. Starting with the Korean and Japanese publishers because the filings are close to home.</p>
+          <p class="meta">Tools: Excel and Google Sheets, moving toward proper financial models.</p>
+        </li>
+        <li>
+          <h3>Learning Python for analysis</h3>
+          <p>Working through the basics with the goal of pulling market and player-count data myself, cleaning it, and charting it instead of copying numbers by hand.</p>
+          <p class="meta">Python fundamentals now, pandas next.</p>
+        </li>
+        <li>
+          <h3>Building a portfolio of small write-ups</h3>
+          <p>Short analyses of single questions — why a studio delayed a title, what a price change signals, how a live-service game's revenue holds up after launch. Published here as I finish them.</p>
+          <p class="meta">This is where my first real work will go.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="skills">
+      <h2>What I work with</h2>
+      <dl class="skills">
+        <div><dt>Business</dt><dd>Accounting basics, financial statements, marketing and management coursework</dd></div>
+        <div><dt>Tools</dt><dd>Excel and Google Sheets, PowerPoint, Notion</dd></div>
+        <div><dt>Learning now</dt><dd>Python, SQL, financial modelling and valuation</dd></div>
+        <div><dt>Interests</dt><dd>Games industry economics, market analysis, single-player game design</dd></div>
+      </dl>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <ul class="timeline">
+        <li>
+          <span class="when">20XX – now</span>
+          <span><strong>Integrated Business Management</strong>, Dong-A University, Busan
+          <span class="note">Coursework across accounting, finance, marketing, management and operations.</span></span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="now">
+      <h2>Right now</h2>
+      <div class="note-card">
+        <p>Building the finance and coding foundation for an analyst role, and looking for internships, study partners or anyone working in the games industry who's happy to talk. <a href="mailto:you@example.com">Send me an email</a> — I'll reply.</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>Bardan Tamang · Busan, South Korea · Hosted on GitHub Pages</p>
+    </footer>
+  </main>
+
+</div>
+</body>
+</html>
